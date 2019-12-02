@@ -1,0 +1,6 @@
+{
+  "require":
+  {
+    "abraham/twitteroauth": ">=1.0.1"
+  }
+}
