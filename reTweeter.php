@@ -18,7 +18,7 @@ WilsonWildingWF,1197626664110432259
 	$CONSUMER_SECRET = "AR884q2YGrlEuQbzMdih8nXH6QVzj4mfBrFLBorHqOg8rL24xk";
 	$access_token = "1125408327394107393-icjxE12CigtsiCMJCrymTxIcrhR3wZ";
 	$access_token_secret = "cfBufjkiYXKL1qzvOnQow0WWD2kfbpYpQF7hY3gUsE8cm";
-	$DATABASE_FILE = "F:\\OldProjects\\Projects\\theWorstFansTwitterRepeater\PHP\db.csv";
+	$DATABASE_FILE = "F:\\Projects\\reTweeter\\db.csv";
 	
 	/**
 	* Function that retrieves a mapping of username to last tweet ID.
