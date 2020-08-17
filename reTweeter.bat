@@ -1,1 +1,1 @@
-F:\PHP\php.exe F:\Projects\reTweeter\reTweeter.php
+F:\PHP\php.exe F:\Projects\reTweeter\reTweeter.php > F:\Projects\reTweeter\reTweeter.log 2>&1
