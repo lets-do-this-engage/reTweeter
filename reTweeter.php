@@ -50,7 +50,13 @@
         foreach($twitterChannelData as $twitterChannelLine)
         {
             $twitterChannelLineInfo = explode("=", $twitterChannelLine);
-            $twitterChannelInfoMap[$twitterChannelLineInfo[0]] = explode(",", $twitterChannelLineInfo[1]);
+			$keywords = array();
+			foreach(explode(",", $twitterChannelLineInfo[1]) as $keyword)
+			{
+				$keywords[] = str_replace(array("\n", "\r"), '', $keyword);
+			}
+            $twitterChannelInfoMap[$twitterChannelLineInfo[0]] = $keywords;
+			#gotta strip outnew line characters in the keywords
         }
         print_r($twitterChannelInfoMap);
         return $twitterChannelInfoMap;
@@ -79,8 +85,7 @@
                 $twitterConfigInfoMap[$accountInfo[0]][$accountInfo[1]] = $text = preg_replace("/\r|\n/", "", $twitterConfigDataLineInfo[1]);
             }
         }
-        #echo "twitterConfigInfoMap [" . print_r($twitterConfigInfoMap) . "]\n";
-        #echo "twitterConfigInfoMap [" . $twitterConfigInfoMap . "]\n";
+        echo "twitterConfigInfoMap [" . print_r($twitterConfigInfoMap) . "]\n";
         return $twitterConfigInfoMap;
     }
 	
@@ -111,8 +116,9 @@
 	{
 		echo "Getting tweets for [$twitterHandle] since tweet id [$latestTweetId]\n";
 		$tweets = array();
-		$tweeets = $connection->get("statuses/user_timeline", ["count" => 200, "exclude_replies" => false, "screen_name" => $twitterHandle, "include_rts" => true, "since_id" => $latestTweetId]);
-		return $tweeets;
+		$tweets = $connection->get("statuses/user_timeline", ["count" => 200, "exclude_replies" => false, "screen_name" => $twitterHandle, "include_rts" => true, "since_id" => $latestTweetId]);
+		echo "tweets : [" . print_r($tweets,true) . "]\n";
+		return $tweets;
 	}
 	
 	/*
@@ -120,10 +126,10 @@
 	*/
 	function createRetweetAndLike($connection, $tweetId)
 	{
-		#echo "connection [" . print_r($connection, true) . "]\n";
+		echo "connection [" . print_r($connection, true) . "]\n";
         echo "Retweeting [$tweetId]\n";
 		$result = $connection->post("statuses/retweet", ["id" => $tweetId]);
-        #echo "result [" . print_r($result, true) . "]\n";
+        echo "result [" . print_r($result, true) . "]\n";
 		$connection->post("favorites/create", ["id" => $tweetId]);
 	}
     
@@ -138,19 +144,24 @@
         $content = $connection->get("account/verify_credentials");
 		return $connection;
 	}
+	
     
     /*
 	* Retweets to a worst fans channel if conditions are met
 	*/
 	function retweetToChannelIfApplicable($twitterChannelKeywordInfo, $twitterConfig, $newTweet)
 	{
+		$tweetText = $newTweet->text;
+		echo "b4 tweetText : [" . $tweetText . "]\n";
+		$tweetText = preg_replace('/\b(https?|http):\/\/[-A-Z0-9+&@#\/%?=~_|$!:,.;]*[A-Z0-9+&@#\/%=~_|$]/i', '', $tweetText);
+		echo "aftr tweetText : [" . $tweetText . "]\n";
         foreach ($twitterChannelKeywordInfo as $twitterChannel=>$twitterChannelKeywords)
         {
             echo "twitterChannel : [" . $twitterChannel . "]\n";
             foreach ($twitterChannelKeywords as $keyword)
             {
-                echo "rt text [" . $newTweet->text . "] keyword : [" . $keyword . "] \n";
-                if(stripos($newTweet->text, $keyword) !== false)
+               echo "rt text [" . $tweetText . "] keyword : [" . $keyword . "] \n";
+                if(stripos($tweetText, $keyword) !== false)
                 {
                     echo "Word [" . $keyword . "] Found! RETWEETING!\n";
                     //retweet
@@ -185,16 +196,19 @@
 			if($newTweet->in_reply_to_status_id)
 			{
 				//This is a reply, ignore
+                echo "This is a reply, [" . print_r($newTweet, true) . "] ignoring";
 			}
 			else if(property_exists($newTweet, "retweeted_status"))
 			{
 				//This is a retweet, check to see if we should retweet it in any specific channels
+                echo "RT newTweet : [" . print_r($newTweet, true) . "]\n";
                 retweetToChannelIfApplicable($twitterChannelKeywordInfo, $twitterConfig, $newTweet);
 			}
 			else
 			{
 				//This is a tweet!
 				#echo "last recorded tweet id [" . $lastTweetsMap[$twitterHandle]. "] current tweet id : [" . $newTweet->id . "]\n";
+                echo "regular tweet newTweet : [" . print_r($newTweet, true) . "]\n";
 				array_push($tweetsToRetweet, $newTweet);
 				if($lastTweetsMap[$twitterHandle] < $newTweet->id)
 				{
