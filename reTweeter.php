@@ -116,7 +116,7 @@
 	{
 		echo "Getting tweets for [$twitterHandle] since tweet id [$latestTweetId]\n";
 		$tweets = array();
-		$tweets = $connection->get("statuses/user_timeline", ["count" => 200, "exclude_replies" => false, "screen_name" => $twitterHandle, "include_rts" => true, "since_id" => $latestTweetId]);
+		$tweets = $connection->get("statuses/user_timeline", ["count" => 200, "tweet_mode" => "extended", "exclude_replies" => false, "screen_name" => $twitterHandle, "include_rts" => true, "since_id" => $latestTweetId]);
 		echo "tweets : [" . print_r($tweets,true) . "]\n";
 		return $tweets;
 	}
@@ -145,16 +145,37 @@
 		return $connection;
 	}
 	
+	/*
+	* Retrieves the full tweet text and formats it
+	*/
+	function getTweetText($tweet)
+	{
+		echo "getTweetText tweet : [" . print_r($tweet,true) . "]\n";
+		echo "getTweetText got text? : [" . property_exists($tweet, 'text') . "]\n";
+		if(property_exists($tweet, 'text'))
+		{
+			$tweetText = $tweet->text;
+		}
+		else if(property_exists($tweet, 'full_text'))
+		{
+			$tweetText = $tweet->full_text;
+		}
+		echo "getTweetText b4 tweetText : [" . $tweetText . "]\n";
+		if($tweet->retweeted_status != '')
+		{
+			$tweetText = $tweet->retweeted_status->full_text;
+		}
+		$tweetText = preg_replace('/\b(https?|http):\/\/[-A-Z0-9+&@#\/%?=~_|$!:,.;]*[A-Z0-9+&@#\/%=~_|$]/i', '', $tweetText);
+		echo "getTweetText aftr tweetText : [" . $tweetText . "]\n";
+		return $tweetText;
+	}
     
     /*
 	* Retweets to a worst fans channel if conditions are met
 	*/
 	function retweetToChannelIfApplicable($twitterChannelKeywordInfo, $twitterConfig, $newTweet)
 	{
-		$tweetText = $newTweet->text;
-		echo "b4 tweetText : [" . $tweetText . "]\n";
-		$tweetText = preg_replace('/\b(https?|http):\/\/[-A-Z0-9+&@#\/%?=~_|$!:,.;]*[A-Z0-9+&@#\/%=~_|$]/i', '', $tweetText);
-		echo "aftr tweetText : [" . $tweetText . "]\n";
+		$tweetText = getTweetText($newTweet);
         foreach ($twitterChannelKeywordInfo as $twitterChannel=>$twitterChannelKeywords)
         {
             echo "twitterChannel : [" . $twitterChannel . "]\n";
@@ -193,10 +214,11 @@
 		//go through what we founds
 		foreach ($newTweets as $newTweet)
 		{
+			#echo "newTweet : [" . print_r($newTweet, true) . "]\n";
 			if($newTweet->in_reply_to_status_id)
 			{
 				//This is a reply, ignore
-                echo "This is a reply, [" . print_r($newTweet, true) . "] ignoring";
+                echo "This is a reply, [" . print_r($newTweet, true) . "] ignoring\n";
 			}
 			else if(property_exists($newTweet, "retweeted_status"))
 			{
