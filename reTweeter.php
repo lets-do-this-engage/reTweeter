@@ -151,7 +151,6 @@
 	function getTweetText($tweet)
 	{
 		echo "getTweetText tweet : [" . print_r($tweet,true) . "]\n";
-		echo "getTweetText got text? : [" . property_exists($tweet, 'text') . "]\n";
 		if(property_exists($tweet, 'text'))
 		{
 			$tweetText = $tweet->text;
@@ -161,6 +160,11 @@
 			$tweetText = $tweet->full_text;
 		}
 		echo "getTweetText b4 tweetText : [" . $tweetText . "]\n";
+		if(property_exists($tweet, 'quoted_status'))
+		{
+			#add original text to tweet text so we can scan that for keywords also
+			$tweetText .= "\n" . $tweet->quoted_status->full_text;
+		}
 		if($tweet->retweeted_status != '')
 		{
 			$tweetText = $tweet->retweeted_status->full_text;
@@ -178,10 +182,10 @@
 		$tweetText = getTweetText($newTweet);
         foreach ($twitterChannelKeywordInfo as $twitterChannel=>$twitterChannelKeywords)
         {
-            echo "twitterChannel : [" . $twitterChannel . "]\n";
+            echo "checking for twitterChannel : [" . $twitterChannel . "]\n";
             foreach ($twitterChannelKeywords as $keyword)
             {
-               echo "rt text [" . $tweetText . "] keyword : [" . $keyword . "] \n";
+               echo "twitterChannel  : [" . $twitterChannel . "] rt text [" . $tweetText . "] keyword : [" . $keyword . "] \n";
                 if(stripos($tweetText, $keyword) !== false)
                 {
                     echo "Word [" . $keyword . "] Found! RETWEETING!\n";
