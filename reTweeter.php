@@ -5,9 +5,9 @@
 
 	use Abraham\TwitterOAuth\TwitterOAuth;
     
-    $PATH_TO_TWITTER_API_CONFIG_FILE = 'F:\Projects\reTweeter\reTweeter.cfg';
-    $PATH_TO_CONFIG_FILE = 'F:\Projects\reTweeter\tweetChannels.cfg';
-	$DATABASE_FILE = "F:\\Projects\\reTweeter\\db.csv";
+    $PATH_TO_TWITTER_API_CONFIG_FILE = '/var/scripts/reTweeter/reTweeter.cfg';
+    $PATH_TO_CONFIG_FILE = '/var/scripts/reTweeter/tweetChannels.cfg';
+	$DATABASE_FILE = "/var/scripts/reTweeter/db.csv";
 	
 	/**
 	* Function that retrieves a mapping of username to last tweet ID.
