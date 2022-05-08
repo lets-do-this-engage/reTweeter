@@ -207,14 +207,16 @@
 	$lastTweetsMap = getLastTweetsMap();
     $twitterChannelKeywordInfo = getTwitterChannelKeywords();
     $twitterConfig = getTwitterConfig();
+	echo "getting main config\n";
     $connection = buildConnection($twitterConfig['main']);
+	echo "connection built connection: [" . $connection . "]\n";
 	//loop through each fan
 	foreach($theWorstFansTwitterHandles as $twitterHandle)
 	{
 		$latestTweetId = $lastTweetsMap[$twitterHandle];
 		//get their tweets since the last time we checked
 		$newTweets = getTweets($connection, $twitterHandle, $latestTweetId);
-        #echo "newTweets : [" . print_r($newTweets, true) . "]";
+        echo "newTweets : [" . print_r($newTweets, true) . "]";
 		//go through what we founds
 		foreach ($newTweets as $newTweet)
 		{
