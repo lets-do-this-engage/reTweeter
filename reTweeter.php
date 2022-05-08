@@ -215,6 +215,7 @@
 	//loop through each fan
 	foreach($theWorstFansTwitterHandles as $twitterHandle)
 	{
+		echo "twitterHandle: [" . $twitterHandle . "]\n";
 		$latestTweetId = $lastTweetsMap[$twitterHandle];
 		//get their tweets since the last time we checked
 		$newTweets = getTweets($connection, $twitterHandle, $latestTweetId);
