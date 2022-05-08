@@ -209,7 +209,7 @@
     $twitterConfig = getTwitterConfig();
 	echo "getting main config\n";
     $connection = buildConnection($twitterConfig['main']);
-	echo "connection built connection: [" . $connection . "]\n";
+	echo "connection built connection: [" . print_r($connection, true) . "]\n";
 	//loop through each fan
 	foreach($theWorstFansTwitterHandles as $twitterHandle)
 	{
