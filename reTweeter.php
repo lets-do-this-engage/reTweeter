@@ -141,7 +141,9 @@
         //connect
         echo "buildConnection : [" . print_r($twitterConfig, true). "] key : [" . $twitterConfig['consumer_key'] . "]\n";
         $connection = new TwitterOAuth($twitterConfig['consumer_key'], $twitterConfig['consumer_secret'], $twitterConfig['access_token'], $twitterConfig['access_token_secret']);
+		echo "connection 1"
         $content = $connection->get("account/verify_credentials");
+		echo "connection made"
 		return $connection;
 	}
 	
