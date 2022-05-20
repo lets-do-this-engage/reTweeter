@@ -193,6 +193,7 @@ Array
             [14] => championsleague
             [15] => champions league
             [16] => worstfansunite
+            [17] => NWSL
         )
 
     [WorstFansBeer] => Array
@@ -377,30 +378,30 @@ connection 1connection madeconnection built connection: [Abraham\TwitterOAuth\Tw
             [httpCode:Abraham\TwitterOAuth\Response:private] => 200
             [headers:Abraham\TwitterOAuth\Response:private] => Array
                 (
-                    [date] => Fri, 20 May 2022 22:25:01 GMT
+                    [date] => Fri, 20 May 2022 22:30:02 GMT
                     [pragma] => no-cache
                     [server] => tsa_b
                     [status] => 200 OK
                     [expires] => Tue, 31 Mar 1981 05:00:00 GMT
-                    [set_cookie] => guest_id=v1%3A165308550134406863; Max-Age=63072000; Expires=Sun, 19 May 2024 22:25:01 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+                    [set_cookie] => guest_id=v1%3A165308580199228601; Max-Age=63072000; Expires=Sun, 19 May 2024 22:30:02 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
                     [content_type] => application/json;charset=utf-8
                     [cache_control] => no-cache, no-store, must-revalidate, pre-check=0, post-check=0
-                    [last_modified] => Fri, 20 May 2022 22:25:01 GMT
-                    [x_transaction] => 6d5df553a086d748
+                    [last_modified] => Fri, 20 May 2022 22:30:02 GMT
+                    [x_transaction] => 5f2b321723e6c8c2
                     [content_length] => 1593
                     [x_access_level] => read-write
                     [x_frame_options] => SAMEORIGIN
                     [content_encoding] => gzip
                     [x_xss_protection] => 0
                     [x_rate_limit_limit] => 75
-                    [x_rate_limit_reset] => 1653085502
+                    [x_rate_limit_reset] => 1653086701
                     [content_disposition] => attachment; filename=json.json
                     [x_content_type_options] => nosniff
-                    [x_rate_limit_remaining] => 71
+                    [x_rate_limit_remaining] => 74
                     [x_twitter_response_tags] => BouncerCompliant
                     [strict_transport_security] => max-age=631138519
-                    [x_response_time] => 58
-                    [x_connection_hash] => 5fc340369f0b1063a2a20241ed3403d1edceae3a7739cde9843f55d77e34fa3c
+                    [x_response_time] => 67
+                    [x_connection_hash] => dffa7b1d2acacd16699b33fca508eda1c678451b2fddc91d9dac53bdd85e0f41
                 )
 
             [body:Abraham\TwitterOAuth\Response:private] => stdClass Object
@@ -921,17 +922,17 @@ connection 1connection madeconnection built connection: [Abraham\TwitterOAuth\Tw
 
             [xHeaders:Abraham\TwitterOAuth\Response:private] => Array
                 (
-                    [x_transaction] => 6d5df553a086d748
+                    [x_transaction] => 5f2b321723e6c8c2
                     [x_access_level] => read-write
                     [x_frame_options] => SAMEORIGIN
                     [x_xss_protection] => 0
                     [x_rate_limit_limit] => 75
-                    [x_rate_limit_reset] => 1653085502
+                    [x_rate_limit_reset] => 1653086701
                     [x_content_type_options] => nosniff
-                    [x_rate_limit_remaining] => 71
+                    [x_rate_limit_remaining] => 74
                     [x_twitter_response_tags] => BouncerCompliant
-                    [x_response_time] => 58
-                    [x_connection_hash] => 5fc340369f0b1063a2a20241ed3403d1edceae3a7739cde9843f55d77e34fa3c
+                    [x_response_time] => 67
+                    [x_connection_hash] => dffa7b1d2acacd16699b33fca508eda1c678451b2fddc91d9dac53bdd85e0f41
                 )
 
         )
@@ -1635,7 +1636,7 @@ One is a player Yankee fans clamor for and one is a player I’ve read is “the
                                 )
 
                             [protected] => 
-                            [followers_count] => 15715
+                            [followers_count] => 15716
                             [friends_count] => 10685
                             [listed_count] => 55
                             [created_at] => Tue Jan 24 16:49:44 +0000 2012
@@ -1680,7 +1681,7 @@ One is a player Yankee fans clamor for and one is a player I’ve read is “the
                     [contributors] => 
                     [is_quote_status] => 
                     [retweet_count] => 30
-                    [favorite_count] => 310
+                    [favorite_count] => 313
                     [favorited] => 
                     [retweeted] => 
                     [possibly_sensitive] => 
@@ -2343,7 +2344,7 @@ One is a player Yankee fans clamor for and one is a player I’ve read is “the
                                 )
 
                             [protected] => 
-                            [followers_count] => 15715
+                            [followers_count] => 15716
                             [friends_count] => 10685
                             [listed_count] => 55
                             [created_at] => Tue Jan 24 16:49:44 +0000 2012
@@ -2388,7 +2389,7 @@ One is a player Yankee fans clamor for and one is a player I’ve read is “the
                     [contributors] => 
                     [is_quote_status] => 
                     [retweet_count] => 30
-                    [favorite_count] => 310
+                    [favorite_count] => 313
                     [favorited] => 
                     [retweeted] => 
                     [possibly_sensitive] => 
@@ -3176,16 +3177,16 @@ connection 1connection madeconnection [Abraham\TwitterOAuth\TwitterOAuth Object
             [httpCode:Abraham\TwitterOAuth\Response:private] => 200
             [headers:Abraham\TwitterOAuth\Response:private] => Array
                 (
-                    [date] => Fri, 20 May 2022 22:25:02 GMT
+                    [date] => Fri, 20 May 2022 22:30:03 GMT
                     [pragma] => no-cache
                     [server] => tsa_b
                     [status] => 200 OK
                     [expires] => Tue, 31 Mar 1981 05:00:00 GMT
-                    [set_cookie] => guest_id=v1%3A165308550263887765; Max-Age=63072000; Expires=Sun, 19 May 2024 22:25:02 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+                    [set_cookie] => guest_id=v1%3A165308580334705106; Max-Age=63072000; Expires=Sun, 19 May 2024 22:30:03 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
                     [content_type] => application/json;charset=utf-8
                     [cache_control] => no-cache, no-store, must-revalidate, pre-check=0, post-check=0
-                    [last_modified] => Fri, 20 May 2022 22:25:02 GMT
-                    [x_transaction] => 16f5a9b19b22d357
+                    [last_modified] => Fri, 20 May 2022 22:30:03 GMT
+                    [x_transaction] => d4020432310ab888
                     [content_length] => 1236
                     [x_access_level] => read-write
                     [x_frame_options] => SAMEORIGIN
@@ -3195,11 +3196,11 @@ connection 1connection madeconnection [Abraham\TwitterOAuth\TwitterOAuth Object
                     [x_rate_limit_reset] => 1653086103
                     [content_disposition] => attachment; filename=json.json
                     [x_content_type_options] => nosniff
-                    [x_rate_limit_remaining] => 72
+                    [x_rate_limit_remaining] => 70
                     [x_twitter_response_tags] => BouncerCompliant
                     [strict_transport_security] => max-age=631138519
-                    [x_response_time] => 52
-                    [x_connection_hash] => 3baaccd218b8880fb8bdd0378e4761d4918f6989f3c82fb48b8f751f0b3fa8a7
+                    [x_response_time] => 49
+                    [x_connection_hash] => dbf1ee73d9811837b9f385f8b4d85bec3902028777cdc83859ff57ef64bd4a4b
                 )
 
             [body:Abraham\TwitterOAuth\Response:private] => stdClass Object
@@ -3396,17 +3397,17 @@ Joey Gallo: .187, 5 HR, 7 RBI, .682 OPS over last 25… https://t.co/v68tkJMuxC
 
             [xHeaders:Abraham\TwitterOAuth\Response:private] => Array
                 (
-                    [x_transaction] => 16f5a9b19b22d357
+                    [x_transaction] => d4020432310ab888
                     [x_access_level] => read-write
                     [x_frame_options] => SAMEORIGIN
                     [x_xss_protection] => 0
                     [x_rate_limit_limit] => 75
                     [x_rate_limit_reset] => 1653086103
                     [x_content_type_options] => nosniff
-                    [x_rate_limit_remaining] => 72
+                    [x_rate_limit_remaining] => 70
                     [x_twitter_response_tags] => BouncerCompliant
-                    [x_response_time] => 52
-                    [x_connection_hash] => 3baaccd218b8880fb8bdd0378e4761d4918f6989f3c82fb48b8f751f0b3fa8a7
+                    [x_response_time] => 49
+                    [x_connection_hash] => dbf1ee73d9811837b9f385f8b4d85bec3902028777cdc83859ff57ef64bd4a4b
                 )
 
         )
@@ -3828,6 +3829,12 @@ Joey Gallo: .187, 5 HR, 7 RBI, .682 OPS over last 25 games
 
 One is a player Yankee fans clamor for and one is a player I’ve read is “the worst player they’ve ever seen”] keyword : [worstfansunite] 
 Word [worstfansunite] Not Found!
+twitterChannel  : [WorstFansSoccer] rt text [Matt Olson: .158, 2 HR, 13 RBI, .586 OPS over last 25 games 
+
+Joey Gallo: .187, 5 HR, 7 RBI, .682 OPS over last 25 games
+
+One is a player Yankee fans clamor for and one is a player I’ve read is “the worst player they’ve ever seen”] keyword : [NWSL] 
+Word [NWSL] Not Found!
 checking for twitterChannel : [WorstFansBeer]
 twitterChannel  : [WorstFansBeer] rt text [Matt Olson: .158, 2 HR, 13 RBI, .586 OPS over last 25 games 
 
@@ -4455,7 +4462,7 @@ RT newTweet : [stdClass Object
                         )
 
                     [protected] => 
-                    [followers_count] => 15715
+                    [followers_count] => 15716
                     [friends_count] => 10685
                     [listed_count] => 55
                     [created_at] => Tue Jan 24 16:49:44 +0000 2012
@@ -4500,7 +4507,7 @@ RT newTweet : [stdClass Object
             [contributors] => 
             [is_quote_status] => 
             [retweet_count] => 30
-            [favorite_count] => 310
+            [favorite_count] => 313
             [favorited] => 
             [retweeted] => 
             [possibly_sensitive] => 
@@ -4871,7 +4878,7 @@ getTweetText tweet : [stdClass Object
                         )
 
                     [protected] => 
-                    [followers_count] => 15715
+                    [followers_count] => 15716
                     [friends_count] => 10685
                     [listed_count] => 55
                     [created_at] => Tue Jan 24 16:49:44 +0000 2012
@@ -4916,7 +4923,7 @@ getTweetText tweet : [stdClass Object
             [contributors] => 
             [is_quote_status] => 
             [retweet_count] => 30
-            [favorite_count] => 310
+            [favorite_count] => 313
             [favorited] => 
             [retweeted] => 
             [possibly_sensitive] => 
@@ -5033,16 +5040,16 @@ connection 1connection madeconnection [Abraham\TwitterOAuth\TwitterOAuth Object
             [httpCode:Abraham\TwitterOAuth\Response:private] => 200
             [headers:Abraham\TwitterOAuth\Response:private] => Array
                 (
-                    [date] => Fri, 20 May 2022 22:25:03 GMT
+                    [date] => Fri, 20 May 2022 22:30:04 GMT
                     [pragma] => no-cache
                     [server] => tsa_b
                     [status] => 200 OK
                     [expires] => Tue, 31 Mar 1981 05:00:00 GMT
-                    [set_cookie] => guest_id=v1%3A165308550379037152; Max-Age=63072000; Expires=Sun, 19 May 2024 22:25:03 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
+                    [set_cookie] => guest_id=v1%3A165308580430984117; Max-Age=63072000; Expires=Sun, 19 May 2024 22:30:04 GMT; Path=/; Domain=.twitter.com; Secure; SameSite=None
                     [content_type] => application/json;charset=utf-8
                     [cache_control] => no-cache, no-store, must-revalidate, pre-check=0, post-check=0
-                    [last_modified] => Fri, 20 May 2022 22:25:03 GMT
-                    [x_transaction] => 7aba75af13e2b059
+                    [last_modified] => Fri, 20 May 2022 22:30:04 GMT
+                    [x_transaction] => ce3910e37f0838d2
                     [content_length] => 1236
                     [x_access_level] => read-write
                     [x_frame_options] => SAMEORIGIN
@@ -5052,11 +5059,11 @@ connection 1connection madeconnection [Abraham\TwitterOAuth\TwitterOAuth Object
                     [x_rate_limit_reset] => 1653086103
                     [content_disposition] => attachment; filename=json.json
                     [x_content_type_options] => nosniff
-                    [x_rate_limit_remaining] => 71
+                    [x_rate_limit_remaining] => 69
                     [x_twitter_response_tags] => BouncerCompliant
                     [strict_transport_security] => max-age=631138519
-                    [x_response_time] => 67
-                    [x_connection_hash] => 06c0482e6b1e29014518f072e70f9f45a90f8e775094156435da518d79634cd8
+                    [x_response_time] => 54
+                    [x_connection_hash] => a6ae5a0580980fb8639f03322f882ffcc6e123a78bfac5446954deca859b4914
                 )
 
             [body:Abraham\TwitterOAuth\Response:private] => stdClass Object
@@ -5253,17 +5260,17 @@ Joey Gallo: .187, 5 HR, 7 RBI, .682 OPS over last 25… https://t.co/v68tkJMuxC
 
             [xHeaders:Abraham\TwitterOAuth\Response:private] => Array
                 (
-                    [x_transaction] => 7aba75af13e2b059
+                    [x_transaction] => ce3910e37f0838d2
                     [x_access_level] => read-write
                     [x_frame_options] => SAMEORIGIN
                     [x_xss_protection] => 0
                     [x_rate_limit_limit] => 75
                     [x_rate_limit_reset] => 1653086103
                     [x_content_type_options] => nosniff
-                    [x_rate_limit_remaining] => 71
+                    [x_rate_limit_remaining] => 69
                     [x_twitter_response_tags] => BouncerCompliant
-                    [x_response_time] => 67
-                    [x_connection_hash] => 06c0482e6b1e29014518f072e70f9f45a90f8e775094156435da518d79634cd8
+                    [x_response_time] => 54
+                    [x_connection_hash] => a6ae5a0580980fb8639f03322f882ffcc6e123a78bfac5446954deca859b4914
                 )
 
         )
@@ -5502,6 +5509,9 @@ Word [champions league] Not Found!
 twitterChannel  : [WorstFansSoccer] rt text [Paul O’Neill is the only player in MLB history to be on the winning team in three perfect games. He was the right fielder for Reds left-hander Tom Browning in 1988, and for Yankees David Wells (1998) and Cone (1999).
 #Yankees #RepBX ] keyword : [worstfansunite] 
 Word [worstfansunite] Not Found!
+twitterChannel  : [WorstFansSoccer] rt text [Paul O’Neill is the only player in MLB history to be on the winning team in three perfect games. He was the right fielder for Reds left-hander Tom Browning in 1988, and for Yankees David Wells (1998) and Cone (1999).
+#Yankees #RepBX ] keyword : [NWSL] 
+Word [NWSL] Not Found!
 checking for twitterChannel : [WorstFansBeer]
 twitterChannel  : [WorstFansBeer] rt text [Paul O’Neill is the only player in MLB history to be on the winning team in three perfect games. He was the right fielder for Reds left-hander Tom Browning in 1988, and for Yankees David Wells (1998) and Cone (1999).
 #Yankees #RepBX ] keyword : [WorstFansBeer] 
